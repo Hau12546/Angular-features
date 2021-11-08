@@ -8,13 +8,13 @@
 </div>-->
 
 
-<div class="container">
+<!--<div class="container">
   <app-game-control (TransmitValue)=RenderNumber($event)></app-game-control>
  <hr>
  <ng-container *ngFor="let OddNumber of EvenNumberList">
-  <!--<app-odd *ngIf="OddNumber%2!=0"><p  class="odd-number">{{OddNumber}}-Odd</p></app-odd>
+  <app-odd *ngIf="OddNumber%2!=0"><p  class="odd-number">{{OddNumber}}-Odd</p></app-odd>
    <div appBetterHighlightDirective *appCustomIf="OddNumber%2==0"  [Bg-color]="'purple'" [Text-color]="'white'" [Default-bg-color]="'yellow'" [Default-text-color]="'red'"></div>
-  <app-even *ngIf="OddNumber%2==0"  [Even]="OddNumber"></app-even> -->
+  <app-even *ngIf="OddNumber%2==0"  [Even]="OddNumber"></app-even>
   <ng-container [ngSwitch]="OddNumber%2==0">
     <ng-container *ngSwitchCase="true">
       <app-odd><p  class="odd-number">{{OddNumber}}-Odd</p></app-odd>
@@ -23,8 +23,10 @@
       <app-even   [Even]="OddNumber"></app-even>
     </ng-container>
     <p *ngSwitchDefault>
-      <!-- <app-even   [Even]="OddNumber"></app-even> -->
+<app-even   [Even]="OddNumber"></app-even>
     </p>
   </ng-container>
 </ng-container>
-</div>
+</div>-->
+
+<app-account-list></app-account-list>

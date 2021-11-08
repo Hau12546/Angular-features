@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12">
+      <app-new-account (Emitter)="RenderNewAccount($event)"></app-new-account>
+    </div>
+  </div>
+  <div class="row pt-3">
+    <div class="col-xl-12 ">
+      <div class="pt-2" *ngFor="let account of AccountList; let i=index">
+        <app-account-detail [AccountDetail]="account" >
+        </app-account-detail>
+      </div>
+    </div>
+  </div>
+</div>

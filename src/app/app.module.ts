@@ -9,7 +9,7 @@ import { BasicHighLightDirective } from './custom-directive/basic-highlight-dire
 import { SeverElementComponent } from './sever-element/sever-element.component';
 import { BetterHighlightDirectiveDirective } from './custom-directive/better-highlight-directive.directive';
 import { CustomIfDirective } from './custom-directive/custom-if.directive';
-
+import { DIModule } from './di/di.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +17,13 @@ import { CustomIfDirective } from './custom-directive/custom-if.directive';
     SeverElementComponent,
     BasicHighLightDirective,
     BetterHighlightDirectiveDirective,
-    CustomIfDirective
+    CustomIfDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    Assignment4Module
+    Assignment4Module,
+    DIModule
   ],
   providers: [],
   bootstrap: [AppComponent]
