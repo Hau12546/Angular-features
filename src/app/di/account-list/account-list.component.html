@@ -7,7 +7,7 @@
   <div class="row pt-3">
     <div class="col-xl-12 ">
       <div class="pt-2" *ngFor="let account of AccountList; let i=index">
-        <app-account-detail [AccountDetail]="account" >
+        <app-account-detail [AccountDetail]="account" [ID]="i" >
         </app-account-detail>
       </div>
     </div>

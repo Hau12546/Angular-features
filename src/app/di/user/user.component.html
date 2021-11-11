@@ -1,0 +1,26 @@
+<form action="">
+  <div class="mb-3">
+    <label for="" class="form-label">Name</label>
+    <input type="text" #UserName  class="form-control" name="" id=""
+      aria-describedby="helpId" placeholder="">
+    <small id="helpId" class="form-text text-muted">Help text</small>
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Status</label>
+    <select #UserStatus  class="form-control" name="" id="">
+      <option [value]="1">Active</option>
+      <option [value]="2">InActive</option>
+    </select>
+  </div>
+  <button (click)="CreateUser(UserName.value, UserStatus.value)" type="button" class="btn btn-primary m-2">Creater User</button>
+</form>
+<hr>
+<h1>Active User</h1>
+<ng-container *ngFor="let activeUser of UserList; let i=index">
+  <app-active-user [ActiveUser]="activeUser" *ngIf="activeUser.status==1" ></app-active-user>
+</ng-container>
+<hr>
+<h1>Inactive User</h1>
+<ng-container *ngFor="let inactiveUser of UserList; let i=index">
+  <app-inactive-user [InactiveUser]="inactiveUser" *ngIf="inactiveUser.status==2"></app-inactive-user>
+</ng-container>

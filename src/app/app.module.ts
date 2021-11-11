@@ -1,3 +1,4 @@
+import { AccountService } from 'src/app/share/service/account.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,6 +11,8 @@ import { SeverElementComponent } from './sever-element/sever-element.component';
 import { BetterHighlightDirectiveDirective } from './custom-directive/better-highlight-directive.directive';
 import { CustomIfDirective } from './custom-directive/custom-if.directive';
 import { DIModule } from './di/di.module';
+import { RoutingFeatureModule } from './routing-feature/routing-feature/routing-feature.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,8 @@ import { DIModule } from './di/di.module';
     BrowserModule,
     AppRoutingModule,
     Assignment4Module,
-    DIModule
+    DIModule,
+    RoutingFeatureModule
   ],
   providers: [],
   bootstrap: [AppComponent]

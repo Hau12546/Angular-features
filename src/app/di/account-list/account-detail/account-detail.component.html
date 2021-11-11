@@ -5,8 +5,8 @@
   <div class="card-body">
     <h5 class="card-title">{{AccountDetail.role}}</h5>
     <p class="card-text">{{AccountDetail.status}}</p>
-    <a href="#" class="btn btn-primary m-1">Set to Active</a>
-    <a href="#" class="btn btn-danger m-1">Set to Inactive</a>
-    <a href="#" class="btn btn-secondary m-1">Set to Unknown</a>
+    <button type="button"  (click)="UpdateStatusActive('active')" class="btn btn-primary m-1">Set to Active</button>
+    <button  type="button" (click)="UpdateStatusInactive('Inactive')" class="btn btn-danger m-1">Set to Inactive</button>
+    <button  type="button"   (click)="UpdateStatusUnknown('Unknown')" class="btn btn-secondary m-1">Set to Unknown</button>
   </div>
 </div>
