@@ -13,11 +13,8 @@ export class ViewUserComponent implements OnInit {
   constructor(private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.user = {
-      id: this.activeRoute.snapshot.params['id'],
-      name: this.activeRoute.snapshot.params['name']
-    }
     this.GetParamsWithObservable();
+    console.log(this.user);
   }
 
   GetParamsWithObservable(){

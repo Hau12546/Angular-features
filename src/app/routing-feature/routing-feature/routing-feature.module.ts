@@ -1,3 +1,4 @@
+import { ResolveService } from './../../share/service/resolve-service/resolve.service';
 import { RouterModule } from '@angular/router';
 import { RoutingfeatureComponent } from './../routingfeature/routingfeature.component';
 import { NgModule } from '@angular/core';
@@ -10,6 +11,12 @@ import { ServerComponent } from '../servers/server/server.component';
 import { EditServerComponent } from '../servers/edit-server/edit-server.component';
 import { FormsModule } from '@angular/forms';
 import { CustomRoutes } from './custom-routing';
+import { ServerService } from 'src/app/share/service/serverService/server.service';
+import { AuthService } from 'src/app/share/service/auth-guard-service/auth.service';
+import { Authorize } from 'src/app/share/service/auth-guard-service/authorization';
+import { CanDeactiveGuard } from 'src/app/share/service/can-deactive-guard/can-deactive.guard';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+import { ErrorPageComponent } from '../error-page/error-page.component';
 
 
 
@@ -22,14 +29,16 @@ import { CustomRoutes } from './custom-routing';
     ServersComponent,
     ViewUserComponent,
     ServerComponent,
-    EditServerComponent
+    EditServerComponent,
+    PageNotFoundComponent,
+    ErrorPageComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forRoot(CustomRoutes)
+    RouterModule.forRoot(CustomRoutes,{useHash:true})
   ],
-  providers:[],
+  providers:[ServerService, AuthService, Authorize,CanDeactiveGuard,ResolveService],
   exports:[
     HomeComponent,
     RoutingfeatureComponent,
@@ -37,7 +46,9 @@ import { CustomRoutes } from './custom-routing';
     ServersComponent,
     ViewUserComponent,
     ServerComponent,
-    EditServerComponent
+    EditServerComponent,
+    PageNotFoundComponent,
+    ErrorPageComponent
   ]
 })
 export class RoutingFeatureModule { }

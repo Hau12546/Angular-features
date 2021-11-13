@@ -1,6 +1,7 @@
+<h3 *ngIf="!allowEdit"><span class="badge bg-warning">OnLine Server Is Not Allowed Modifying</span></h3>
 <div class="form-group">
   <label for="name">Server Name</label>
-  <input
+  <input [disabled]="!allowEdit"
     type="text"
     id="name"
     class="form-control"
@@ -9,13 +10,13 @@
 <div class="form-group">
   <label for="status">Server Status</label>
   <select
-    id="status"
+    id="status" [disabled]="!allowEdit"
     class="form-control"
     [(ngModel)]="serverStatus">
-    <option value="online">Online</option>
-    <option value="offline">Offline</option>
+    <option value="online">OnLine</option>
+    <option value="offline">OffLine</option>
   </select>
 </div>
-<button
+<button [disabled]="!allowEdit"
   class="btn btn-primary"
   (click)="onUpdateServer()">Update Server</button>

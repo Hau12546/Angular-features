@@ -1,3 +1,4 @@
+import { ServerService } from 'src/app/share/service/serverService/server.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,16 +9,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ServersComponent implements OnInit {
   public servers: { id: number, name: string, status: string }[] = [];
-  constructor(private router: Router, private activeRoute: ActivatedRoute) { }
+  constructor(private router: Router, private activeRoute: ActivatedRoute, private serverService:ServerService) { }
 
   ngOnInit(): void {
+    this.GetServerListFromServerService();
   }
 
-  ReloadServer() {
-    this.router.navigate(['/servers', 1, 'edit'], {
-      relativeTo: this.activeRoute, queryParams: { allowEdit: '1' },
-      fragment: 'loading'
-    })
+  GetServerListFromServerService(){
+    this.servers = this.serverService.PrintServerList();
   }
+
 
 }
