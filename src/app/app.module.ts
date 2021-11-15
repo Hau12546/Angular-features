@@ -1,3 +1,4 @@
+import { ObservableModule } from './observable-feature/observable/observable.module';
 import { AccountService } from 'src/app/share/service/account.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,7 +28,8 @@ import { RoutingFeatureModule } from './routing-feature/routing-feature/routing-
     BrowserModule,
     AppRoutingModule,
     DIModule,
-    RoutingFeatureModule
+    // RoutingFeatureModule,
+    ObservableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
