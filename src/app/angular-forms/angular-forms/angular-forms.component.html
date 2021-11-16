@@ -1,0 +1,50 @@
+<div class="container">
+  <form action="" (ngSubmit)="onSubmit()" #info="ngForm">
+    <div class="col-xl-12" ngModelGroup="userInfo" #userInfo="ngModelGroup">
+      <div class="mb-3">
+        <label for="" class="form-label">UserName</label>
+        <input  #UserName="ngModel" type="text" placeholder="UserName" required ngModel
+          class="form-control" name="username" id="" aria-describedby="helpId">
+        <small *ngIf="!UserName.valid && UserName.touched" id="helpId" class="form-text text-muted">Enter valid username
+          please</small>
+      </div>
+      <button (click)="SuggestUserName()" type="button" class="btn btn-primary btn-md mb-3">Suggest an Username</button>
+      <div class="mb-3">
+        <label for="" class="form-label">Mail</label>
+        <input  email #UserEmail="ngModel" required type="text" placeholder="@.com" ngModel
+          class="form-control" name="email" id="" aria-describedby="helpId">
+        <small *ngIf="!UserEmail.valid && UserEmail.touched" id="helpId" class="form-text text-muted">Enter valid email
+          please</small>
+      </div>
+      <div class="mb-3">
+        <label for="" class="form-label">Secret Question</label>
+        <select class="form-control" #Question="ngModel" [ngModel]="DefaultQuestion" ngModel name="questions" id=""
+          required>
+          <option *ngFor="let question of ValidateQuestionList; let i=index">{{question}}</option>
+        </select>
+        <small *ngIf="!Question.valid && Question.touched" id="helpId" class="form-text text-muted">Select a question
+          please</small>
+      </div>
+      <div class="mb-3">
+        <label for="" class="form-label">Answer:</label>
+        <textarea ngModel class="form-control" name="answer" id="" rows="3"></textarea>
+      </div>
+      <div class="form-check" *ngFor="let gender of GenderList; let i=index">
+        <label class="form-check-label" >
+          <input type="radio" ngModel class="form-check-input" name="gender" [value]="gender">
+          {{gender}}
+        </label>
+      </div>
+      <p *ngIf="!userInfo.valid">Form is invalid</p>
+    </div>
+    <button type="submit" [disabled]="!info.valid" class="btn btn-secondary">Submit</button>
+  </form>
+  <div class="card mt-3" *ngIf="ShowData" >
+    <div class="card-body">
+      <h4 class="card-title">Name: {{UserInfo.name}}</h4>
+      <p class="card-text">Gender: {{UserInfo.gender}}</p>
+      <p class="card-text">Email: {{UserInfo.email}}</p>
+      <p class="card-text">Question {{UserInfo.questions}} - Answer {{UserInfo.answer}}</p>
+    </div>
+  </div>
+</div>
