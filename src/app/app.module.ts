@@ -14,6 +14,7 @@ import { CustomIfDirective } from './custom-directive/custom-if.directive';
 import { DIModule } from './di/di.module';
 import { RoutingFeatureModule } from './routing-feature/routing-feature/routing-feature.module';
 import { AngularFormFeatureModule } from './angular-forms/angular-form-feature/angular-form-feature.module';
+import { ReactiveFormComponent } from './angular-forms/reactive-form/reactive-form.component';
 
 
 @NgModule({
