@@ -3,27 +3,31 @@
     <div class="col-xl-12" formGroupName="userdata">
       <div class="mb-3">
         <label for="" class="form-label">UserName</label>
-        <input type="text" required formControlName="username"
-          class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-        <small *ngIf="!UserForm.get('userdata.username')?.valid && UserForm.get('userdata.username')?.touched" id="helpId" class="form-text text-muted">Please enter valid name</small>
+        <input type="text" required formControlName="username" class="form-control" name="" id=""
+          aria-describedby="helpId" placeholder="">
+        <small *ngIf="!UserForm.get('userdata.username')?.valid && UserForm.get('userdata.username')?.touched"
+          id="helpId" class="form-text text-muted">Please enter valid name</small>
       </div>
       <div class="mb-3">
         <label for="" class="form-label">UserEmail</label>
-        <input type="text" required formControlName="useremail"
-          class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-        <small *ngIf="!UserForm.get('userdata.useremail')?.valid && UserForm.get('userdata.useremail')?.touched" id="helpId" class="form-text text-muted">Please enter valid email</small>
+        <input type="text" required formControlName="useremail" class="form-control" name="" id=""
+          aria-describedby="helpId" placeholder="">
+        <small *ngIf="!UserForm.get('userdata.useremail')?.valid && UserForm.get('userdata.useremail')?.touched || UserForm.get('userdata.useremail')?.errors?.InvalidEmail"
+          id="helpId" class="form-text text-muted">Please enter valid email</small>
       </div>
     </div>
     <div class="form-check" *ngFor="let gender of GenderList; let i=index">
-      <label class="form-check-label" >
+      <label class="form-check-label">
         <input type="radio" class="form-check-input" name="" [value]="gender" formControlName="usergender">
         {{gender}}
       </label>
     </div>
+    <small *ngIf="UserForm.get('usergender')?.errors?.InvalidGender"
+          id="helpId" class="form-text text-muted">Do not accept gender</small>
     <div formArrayName="hobbies" class="col-xl-12">
       <h4>User Hobbies</h4>
       <button type="button" class="btn btn-primary mt-2 mb-2 " (click)="CreateCustomFormControl()">Add Hobby</button>
-      <div  *ngFor="let hobby of GetFormArray(); let i=index">
+      <div *ngFor="let hobby of GetFormArray(); let i=index">
         <input type="text" class="form-control" [formControlName]="i" />
       </div>
     </div>
