@@ -1,0 +1,35 @@
+<div class="container">
+  <form action="" [formGroup]="ProjectTemplate" (ngSubmit)="OnSubmit()">
+    <div class="col-xl-12" formGroupName="projectInfo">
+      <div class="form-group">
+        <label for="">Project Name</label>
+        <input type="text" class="form-control" formControlName="projectName" fore id="" aria-describedby="helpId" placeholder="">
+        <small *ngIf=" ProjectTemplate.get('projectInfo.projectName')?.errors" id="helpId" class="form-text text-muted">ST about Name wrong</small>
+      </div>
+      <div class="form-group">
+        <label for="">Project Email</label>
+        <input type="text" class="form-control" formControlName="projectEmail" id="" aria-describedby="helpId" placeholder="">
+        <small *ngIf="ProjectTemplate.get('projectInfo.projectEmail')?.errors" id="helpId" class="form-text text-muted">ST about Email wrong</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="">Project Status</label>
+      <select formControlName="projectStatus" class="form-control" name="" id="">
+        <option *ngFor="let status of ProjectStatusList; let i=index">
+          {{status}}
+        </option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  </form>
+  <div *ngIf="ProjectToggle" class="card" style="width:18rem;">
+    <img
+      src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+      class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{CreatedProject.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted ">{{CreatedProject.email}}</h6>
+      <p class="card-text">{{CreatedProject.status}}</p>
+    </div>
+  </div>
+</div>

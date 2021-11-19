@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, observable, Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs-compat/operator/map';
+// import { map } from 'rxjs-compat/operator/map';
 import { filter, first } from 'rxjs/operators';
 import { ObserUserService } from 'src/app/share/service/observable-user-service/obser-user.service';
 import { ObsrevableHandlerService } from 'src/app/share/service/subscription-service/obsrevable-handler.service';
