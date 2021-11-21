@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="mb-3">
+    <label for="" class="form-label">Sort Server Status</label>
+    <input type="text"
+      class="form-control" #TargetStatus (blur)="SortServerStatus()" name="" id="" aria-describedby="helpId" placeholder="">
+  </div>
+  <div class="row"><div class="col-xl-2">
+    <button type="button" (click)="CreaterServer()" class="btn btn-primary">Create Server</button>
+  </div></div>
+  <hr>
+  <span class="badge bg-primary">{{StatusDisplay | async}}</span>
+  <hr>
+  <app-angular-pipe-server [Server]="server" *ngFor="let server of ServerList | statusSortPipe:SortCondition ; let i=index">
+  </app-angular-pipe-server>
+</div>

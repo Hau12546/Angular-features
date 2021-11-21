@@ -1,0 +1,30 @@
+<div class="container">
+  <h1><span class="badge secondary">{{'Angular HTTP CRUD Features'|uppercase}}</span></h1>
+  <form action="" (ngSubmit)="SendPost()" #post="ngForm" >
+    <div class="mb-3">
+      <label for="" class="form-label">Title</label>
+      <input type="text"
+        class="form-control" ngModel name="title" id="" aria-describedby="helpId" placeholder="">
+      <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Content</label>
+      <input type="text"
+        class="form-control" ngModel name="content" id="" aria-describedby="helpId" placeholder="">
+      <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+    </div>
+    <button type="submit" class="btn btn-primary">Send Posts</button>
+    <hr>
+    <div class="row">
+      <div class="col-xl-4 d-flex justify-content-md-start align-items-center">
+        <button type="button" class="btn btn-danger m-1">Fetch post </button>
+        <button type="button" class="btn btn-warning m-1">Clear post </button>
+      </div>
+    </div>
+  </form>
+  <div class="row">
+    <div class="col-xl-12 mt-2 mb-2">
+      <app-post-detail [PostInfo]="post" *ngFor="let post of PostList; let i=index"></app-post-detail>
+    </div>
+  </div>
+</div>

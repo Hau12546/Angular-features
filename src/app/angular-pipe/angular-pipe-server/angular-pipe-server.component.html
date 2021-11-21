@@ -1,0 +1,11 @@
+<div class="card text-white mt-2 mb-2" [ngClass]="{'active': Server.status=='Active'
+  ,'inactive': Server.status=='Inactive',
+  'stable': Server.status=='Stable'}">
+  <!-- <img class="card-img-top" src="" alt=""> -->
+  <div class="card-body">
+    <h4 class="card-title">{{Server.name | uppercase | shorten:3}}</h4>
+    <p class="card-text">{{Server.instanceType | reserse | uppercase }}</p>
+    <p class="card-text">{{Server.time | date:"fullDate" | uppercase}}</p>
+    <p class="card-text">{{Server.status }}</p>
+  </div>
+</div>

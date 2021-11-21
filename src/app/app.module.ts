@@ -1,3 +1,4 @@
+import { AngularPipeModule } from './angular-pipe/angular-pipe/angular-pipe.module';
 import { ObservableModule } from './observable-feature/observable/observable.module';
 import { AccountService } from 'src/app/share/service/account.service';
 import { NgModule } from '@angular/core';
@@ -14,8 +15,9 @@ import { CustomIfDirective } from './custom-directive/custom-if.directive';
 import { DIModule } from './di/di.module';
 import { RoutingFeatureModule } from './routing-feature/routing-feature/routing-feature.module';
 import { AngularFormFeatureModule } from './angular-forms/angular-form-feature/angular-form-feature.module';
-import { ReactiveFormComponent } from './angular-forms/reactive-form/reactive-form.component';
-
+import { AngularHttpModule } from './angular-http/angular-http/angular-http.module';
+// import { ReactiveFormComponent } from './angular-forms/reactive-form/reactive-form.component';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -32,7 +34,10 @@ import { ReactiveFormComponent } from './angular-forms/reactive-form/reactive-fo
     DIModule,
     RoutingFeatureModule,
     ObservableModule,
-    AngularFormFeatureModule
+    AngularFormFeatureModule,
+    AngularPipeModule,
+    AngularHttpModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

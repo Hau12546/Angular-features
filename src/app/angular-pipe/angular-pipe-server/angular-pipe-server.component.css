@@ -1,0 +1,17 @@
+.active{
+  background-color: orange;
+  box-shadow: -3px 3px orange, -1px 1px orange, -3px 3px orange;
+  border: 1px solid orange;
+}
+
+.inactive{
+  background-color: purple;
+  box-shadow: -3px 3px purple, -1px 1px purple, -3px 3px purple;
+  border: 1px solid purple;
+}
+
+.stable{
+  background-color: lightgrey;
+  box-shadow: -3px 3px lightgrey, -1px 1px lightgrey, -3px 3px lightgrey;
+  border: 1px solid lightgrey;
+}
