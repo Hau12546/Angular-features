@@ -1,0 +1,7 @@
+<div class="alert alert-success bg-danger" role="alert" [hidden]="!IsOpen">
+  <h3 class="alert-heading">{{Error.id}}</h3>
+  <h4 class="alert-heading">{{Error.title | uppercase}}</h4>
+  <p>{{Error.content}}</p>
+  <hr>
+  <button type="button" (click)="CloseMsg()" class="btn btn-primary">Close</button>
+</div>

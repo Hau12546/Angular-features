@@ -14,3 +14,10 @@ export interface PostInfo {
   title?: string,
   content?: string
 }
+
+export interface ErrorInfo {
+  id?: string
+  title?: string,
+  content?: string
+}
+

@@ -17,7 +17,7 @@ import { RoutingFeatureModule } from './routing-feature/routing-feature/routing-
 import { AngularFormFeatureModule } from './angular-forms/angular-form-feature/angular-form-feature.module';
 import { AngularHttpModule } from './angular-http/angular-http/angular-http.module';
 // import { ReactiveFormComponent } from './angular-forms/reactive-form/reactive-form.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
